@@ -1,0 +1,11 @@
+services:
+  broker:
+    image: rabbitmq:3-management # mensageria
+    ports:
+      - '15672:15672'  # Management UI - interface grafica do rabbitmq
+      - '5672:5672'    # RabbitMQ port - protocolo TCP, enviar e receber mensagens
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq # persistencia de dados do rabbitmq
+
+volumes:
+  rabbitmq_data:
